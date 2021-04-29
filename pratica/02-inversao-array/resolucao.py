@@ -7,3 +7,5 @@ for i in range(0, 9):
     array[i] = auxArray[8-i]
 
 print(f'\nArray depois da inversão:\n {array}')
+
+input('\nPress <enter> to close ')
