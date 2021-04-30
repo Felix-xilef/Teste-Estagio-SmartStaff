@@ -4,10 +4,9 @@ array3 = [6, 7, 8, 9, 10]
 
 arrayFinal = list()
 
-for i in range(0, 20):
-    if (i < 6): arrayFinal.insert(i, array1[i])
-    elif (i < 15): arrayFinal.insert(i, array2[i-6])
-    else: arrayFinal.insert(i, array3[i-15])
+for arrayI in [array1, array2, array3]:
+    for i in arrayI:
+        arrayFinal.append(i)
 
 print(arrayFinal)
 
