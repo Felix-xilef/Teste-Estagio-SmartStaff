@@ -36,15 +36,15 @@ Arrays de entrada:
 
 ## Requisitos
 
-Para executar o programa, o Python deve estar instalado na sua máquina (em sistemas linux o Python já vem instalado).
+Para executar o programa, o Python 3.6+ deve estar instalado na sua máquina.
 
-- Para verificar se o Python está instalado execute o comando `python --version`. Caso a versão do Python seja impressa na tela, como no exemplo abaixo, ele está instalado.
+- Para verificar se o Python 3.6+ está instalado execute o comando `python --version`. Caso a versão do Python seja impressa na tela e igual ou maior que 3.6, como no exemplo abaixo, ele está instalado.
     ```
     > python --version
     Python 3.9.2
     ```
 
-- Caso ele não esteja instalado acesse o link adquirir a seguir para sua versão mais recente:
+- Caso ele não esteja instalado acesse o link adquirir a seguir para adquirir sua versão mais recente:
 [Python.org](https://www.python.org/downloads/)
 
 ## Como rodar
