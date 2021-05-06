@@ -1,0 +1,231 @@
+<form class="row text-light" *ngIf="!this.routeId">
+    <div class="col-5">
+        <div class="d-flex justify-content-between">
+            <label for="imgPictures" class="form-label">Fotos</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#45d467" (submit)="addPicture()" class="bi bi-plus-circle addPicture" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+        </div>
+        <div class="picturesWrapper" id="picturesWrapper">
+            <div class="col">
+                <div>
+                    <label for="txtUrl">URL</label>
+                    <input type="text" class="form-control txtUrl" name="txtUrl" required>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-7 row">
+        <div class="col-4">
+            <label for="txtId" class="form-label">Id</label>
+            <input type="text" class="form-control" name="txtId" id="txtId" required>
+        </div>
+        <div class="col-3">
+            <label for="txtBudget" class="form-label">Orçamento</label>
+            <input type="number" class="form-control" name="txtBudget" id="txtBudget" required>
+        </div>
+        <div class="col-5">
+            <label for="txtEmail" class="form-label">E-mail</label>
+            <input type="email" class="form-control" name="txtEmail" id="txtEmail" required>
+        </div>
+        <!-- br -->
+        <div class="col-2">
+            <label for="txtAge" class="form-label">Idade</label>
+            <input type="number" class="form-control" name="txtAge" id="txtAge" required>
+        </div>
+        <div class="col-5">
+            <label for="txtFirstName" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="txtFirstName" id="txtFirstName" required>
+        </div>
+        <div class="col-5">
+            <label for="txtLastName" class="form-label">Sobrenome</label>
+            <input type="text" class="form-control" name="txtLastName" id="txtLastName" required>
+        </div>
+        <!-- br -->
+        <div class="col-4">
+            <label for="txtCompany" class="form-label">Companhia</label>
+            <input type="text" class="form-control" name="txtCompany" id="txtCompany" required>
+        </div>
+        <div class="col-4">
+            <label for="txtPhone" class="form-label">Telefone</label>
+            <input type="tel" class="form-control" name="txtPhone" id="txtPhone" required>
+        </div>
+        <div class="col-4">
+            <label for="txtRegistered" class="form-label">Data de registro</label>
+            <input type="datetime-local" class="form-control" name="txtRegistered" id="txtRegistered" required>
+        </div>
+    </div>
+    <!-- br -->
+    <div class="col-6 row">
+        <div class="col-12">
+            <label for="txtAddress" class="form-label">Endereço</label>
+            <input type="text" class="form-control" name="txtAddress" id="txtAddress" required>
+        </div>
+        <!-- br -->
+        <div class="col-4">
+            <label for="txtLatitude" class="form-label">Latitude</label>
+            <input type="number" class="form-control" name="txtLatitude" id="txtLatitude" required>
+        </div>
+        <div class="col-4">
+            <label for="txtLongitude" class="form-label">Longitude</label>
+            <input type="number" class="form-control" name="txtLongitude" id="txtLongitude" required>
+        </div>
+        <div class="col-4">
+            <label for="txtChannel" class="form-label">Canal</label>
+            <input type="text" class="form-control" name="txtChannel" id="txtChannel" required>
+        </div>
+    </div>
+    <div class="col-6">
+        <label for="txtAbout" class="form-label">Sobre</label>
+        <textarea class="form-control" name="txtAbout" id="txtAbout" rows="4" required></textarea>
+    </div>
+    <!-- br -->
+    <div class="col-12">
+        <div class="d-flex pt-3">
+            <label for="txtContacts" class="form-label pe-5">Contatos</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#45d467" (submit)="addContact()" class="bi bi-plus-circle addContact" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+        </div>
+        <div class="contactsWrapper row" id="contactsWrapper">
+            <div class="row">
+                <div class="col-2">
+                    <label for="txtUrl">ID</label>
+                    <input type="text" class="form-control txtId" name="txtId" required>
+                </div>
+                <div class="col-6">
+                    <label for="txtUrl">Intermediador</label>
+                    <input type="text" class="form-control txtBroker" name="txtBroker" required>
+                </div>
+                <div class="col-3">
+                    <label for="txtUrl">Data</label>
+                    <input type="datetime-local" class="form-control txtId" name="txtId" required>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- br -->
+    <div class="col">
+        <button class="btn btn-primary saveButton" type="submit">Salvar</button>
+    </div>
+</form>
+
+<!-- if there is a registry reders the below -->
+
+<form class="row text-light" *ngIf="this.routeId">
+    <div class="col-5">
+        <div class="d-flex justify-content-between">
+            <label for="imgPictures" class="form-label">Fotos</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#45d467" (submit)="addPicture()" class="bi bi-plus-circle addPicture" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+        </div>
+        <div class="picturesWrapper" id="picturesWrapper">
+            <div *ngFor="let picture of registry.pictures" class="col">
+                <div>
+                    <label for="txtUrl">URL</label>
+                    <input type="text" class="form-control txtUrl" name="txtUrl" value="{{picture.url}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-7 row">
+        <div class="col-5">
+            <label for="txtId" class="form-label">Id</label>
+            <input type="text" class="form-control" name="txtId" id="txtId" value="{{registry._id}}" required>
+        </div>
+        <div class="col-3">
+            <label for="txtBudget" class="form-label">Orçamento</label>
+            <input type="number" class="form-control" name="txtBudget" id="txtBudget" value="{{parseBudget(registry.budget)}}" required>
+        </div>
+        <div class="col-4">
+            <label for="txtEmail" class="form-label">E-mail</label>
+            <input type="email" class="form-control" name="txtEmail" id="txtEmail" value="{{registry.email}}" required>
+        </div>
+        <!-- br -->
+        <div class="col-2">
+            <label for="txtAge" class="form-label">Idade</label>
+            <input type="number" class="form-control" name="txtAge" id="txtAge" value="{{registry.age}}" required>
+        </div>
+        <div class="col-5">
+            <label for="txtFirstName" class="form-label">Nome</label>
+            <input type="text" class="form-control" name="txtFirstName" id="txtFirstName" value="{{registry.name.first}}" required>
+        </div>
+        <div class="col-5">
+            <label for="txtLastName" class="form-label">Sobrenome</label>
+            <input type="text" class="form-control" name="txtLastName" id="txtLastName" value="{{registry.name.last}}" required>
+        </div>
+        <!-- br -->
+        <div class="col-4">
+            <label for="txtCompany" class="form-label">Companhia</label>
+            <input type="text" class="form-control" name="txtCompany" id="txtCompany" value="{{registry.company}}" required>
+        </div>
+        <div class="col-4">
+            <label for="txtPhone" class="form-label">Telefone</label>
+            <input type="tel" class="form-control" name="txtPhone" id="txtPhone" value="{{registry.phone}}" required>
+        </div>
+        <div class="col-4">
+            <label for="txtRegistered" class="form-label">Data de registro</label>
+            <input type="datetime-local" class="form-control" name="txtRegistered" id="txtRegistered" value="{{registry.registered}}" required>
+        </div>
+    </div>
+    <!-- br -->
+    <div class="col-6 row">
+        <div class="col-12">
+            <label for="txtAddress" class="form-label">Endereço</label>
+            <input type="text" class="form-control" name="txtAddress" id="txtAddress" value="{{registry.address}}" required>
+        </div>
+        <!-- br -->
+        <div class="col-4">
+            <label for="txtLatitude" class="form-label">Latitude</label>
+            <input type="number" class="form-control" name="txtLatitude" id="txtLatitude" value="{{registry.latitude}}" required>
+        </div>
+        <div class="col-4">
+            <label for="txtLongitude" class="form-label">Longitude</label>
+            <input type="number" class="form-control" name="txtLongitude" id="txtLongitude" value="{{registry.longitude}}" required>
+        </div>
+        <div class="col-4">
+            <label for="txtChannel" class="form-label">Canal</label>
+            <input type="text" class="form-control" name="txtChannel" id="txtChannel" value="{{registry.channel}}" required>
+        </div>
+    </div>
+    <div class="col-6">
+        <label for="txtAbout" class="form-label">Sobre</label>
+        <textarea class="form-control" name="txtAbout" id="txtAbout" rows="4" required>
+            {{registry.about}}
+        </textarea>
+    </div>
+    <!-- br -->
+    <div class="col-12">
+        <div class="d-flex pt-3">
+            <label for="txtContacts" class="form-label pe-5">Contatos</label>
+            <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#45d467" (submit)="addContact()" class="bi bi-plus-circle addContact" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
+            </svg>
+        </div>
+        <div class="contactsWrapper row" id="contactsWrapper">
+            <div *ngFor="let contact of registry.contactTimeline" class="row">
+                <div class="col-2">
+                    <label for="txtUrl">ID</label>
+                    <input type="text" class="form-control txtId" name="txtId" value="{{contact.id}}">
+                </div>
+                <div class="col-6">
+                    <label for="txtUrl">Intermediador</label>
+                    <input type="text" class="form-control txtBroker" name="txtBroker" value="{{contact.broker}}">
+                </div>
+                <div class="col-3">
+                    <label for="txtUrl">Data</label>
+                    <input type="datetime-local" class="form-control txtId" name="txtId" value="{{contact.date}}">
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- br -->
+    <div class="col">
+        <button class="btn btn-primary saveButton" type="submit">Salvar</button>
+    </div>
+</form>

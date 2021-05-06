@@ -53,14 +53,18 @@ Neste desafios existem vários conceitos/funcionalidades/detalhes de diferentes 
 <a href="https://nodejs.org/">
 	<img src="https://nodejs.org//static/images/logo.svg" height=48></img>
 </a>
-e
++
 <a href="https://www.typescriptlang.org/">
 	<img src="https://www.typescriptlang.org/favicon-32x32.png?v=8944a05a8b601855de116c8a56d3b3ae" height=32></img>
+</a>
++
+<a href="https://angular.io/">
+	<img src="https://angular.io/assets/images/logos/angular/logo-nav@2x.png" height=32></img>
 </a>
 
 ## Requisitos
 
-Para executar o programa, o NodeJs deve estar instalado na sua máquina.
+Para executar o programa, o NodeJs e o Angular devem estar instalados na sua máquina.
 
 - Para verificar se o NodeJs está instalado execute o comando `node --version`. Caso a versão do NodeJs seja impressa na tela, como no exemplo abaixo, ele está instalado.
     ```
@@ -70,6 +74,38 @@ Para executar o programa, o NodeJs deve estar instalado na sua máquina.
 
 - Caso ele não esteja instalado acesse o link adquirir a seguir para sua versão mais recente:
 [NodeJs.org](https://nodejs.org/en/)
+
+- Para verificar se o Angular está instalado execute o comando `ng --version`. Caso a versão do Angular seja impressa na tela, como no exemplo abaixo, ele está instalado.
+    ```
+    >ng --version
+         _                      _                 ____ _     ___
+        / \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+       / △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+      / ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+     /_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+                    |___/
+	
+	Angular CLI: 11.1.1
+	Node: 14.15.4
+	OS: win32 x64
+
+	Angular:
+	...
+	Ivy Workspace:
+
+	Package                      Version
+	------------------------------------------------------
+	@angular-devkit/architect    0.1101.1 (cli-only)
+	@angular-devkit/core         11.1.1 (cli-only)
+	@angular-devkit/schematics   11.1.1 (cli-only)
+	@schematics/angular          11.1.1 (cli-only)
+	@schematics/update           0.1101.1 (cli-only)
+    ```
+
+- Caso ele não esteja instalado execute o comando `ng install -g @angular/cli` para instalar sua versão mais recente.
+    ```
+    > npm install -g @angular/cli
+    ```
 
 ## Como rodar
 
@@ -83,7 +119,27 @@ Abra o terminal na pasta backend (`'/pratica/06-CRUD/backend'` a partir da pasta
 
 A API escutará pela porta `3333` do `localhost`.
 
-## Instruções
+Em seguida abra o terminal na pasta frontend (`'/pratica/06-CRUD/frontend'` a partir da pasta inicial deste repositório) e execute o comando `ng serve` :
+
+### Terminal
+```
+> cd /pratica/06-CRUD/frontend
+/pratica/06-CRUD/frontend> ng serve
+```
+
+A aplicação estará disponível na porta `4200` do `localhost`. Para visualiza-la acesse http://localhost:4200/
+
+## Instruções de uso da aplicação
+
+### Acesse a aplicação [aqui](http://localhost:4200/)
+
+A página inicial da aplicação apresentará uma tabela com todos os registros cadastrados, para mudar o campo ou o sentido da ordenação basta selecionar as opções das dropdowns acima da tabela.
+
+Já para editar os dados completos clique no ícone de editar do ítem desejado e para criar um novo registro selecione o ícone de adição. Ambas opções encaminharão para a tela de cadastro/edição.
+
+*Obs: as funções de cadastro, atualização e exclusão a partir do frontend não foram finalizadas e, portanto, não estão disponíveis a partir do frontend da aplicação.
+
+## Instruções de uso do backend
 
 ### Inserções, Atualizações e Remoções
 
@@ -163,4 +219,3 @@ Utilize a rota `/registries` (`http://localhost:3333/registries`). O parâmetro 
 	"direction": "ASC"
 }
 ```
-

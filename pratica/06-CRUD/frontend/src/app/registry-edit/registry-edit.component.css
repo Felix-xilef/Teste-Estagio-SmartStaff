@@ -1,0 +1,29 @@
+.addPicture, .addContact {
+    cursor: pointer;
+}
+
+.saveButton {
+    position: fixed;
+    right: 39px;
+    bottom: 30px;
+    cursor: pointer;
+}
+
+.picturesWrapper {
+    max-height: 178px;
+    overflow: auto;
+}
+
+.picturesWrapper::-webkit-scrollbar {
+    width: 10px;
+}
+
+.picturesWrapper::-webkit-scrollbar-thumb {
+    background-color: rgb(143, 143, 143);
+
+    border-radius: 5px;
+}
+
+.picturesWrapper::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(112, 112, 112);
+}

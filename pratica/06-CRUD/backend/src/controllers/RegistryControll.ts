@@ -83,7 +83,7 @@ var getJsonFromRegistry = (registry: Registry): RegistryJson => {
     // Creating the registry
     const registryJson: RegistryJson =  {
         _id: registry.id,
-        budget: String(registry.budget),
+        budget: new Intl.NumberFormat('en-US', { style: 'currency', currency: 'USD' }).format(registry.budget),
         age: registry.age,
         pictures: [{url: undefined}],
         name: {
@@ -154,7 +154,7 @@ export class RegistryController {
     }
 
     async select(request: Request, response: Response) {
-        const id: string = request.body.id;
+        const id = String(request.query.id);
         const registry = await getRepository(Registry).findOne(id, { relations: ['pictures', 'contacts'] });
         
         if (!registry) return response.status(404).json({ "error": "registry not found" });
@@ -162,26 +162,18 @@ export class RegistryController {
     }
 
     async selectAll(request: Request, response: Response) {
-        const received = request.body;
+        const received = request.query;
 
-        let registeredParam, orderBy: 'name' | 'budget', direction: 'ASC' | 'DESC';
+        let registeredParam = received.registered;
+        
+        let orderBy: 'name' | 'budget' = String(received.orderBy);
+        if (['name', 'budget'].indexOf(orderBy) == -1) orderBy = 'name';
 
-        try {
-            registeredParam = received.registered;
-        } catch {
-            registeredParam = undefined;
-        }
-
-        try {
-            orderBy = received.orderBy;
-            direction = received.direction;
-        } catch {
-            orderBy = 'name';
-            direction = 'ASC';
-        }
+        let direction: 'ASC' | 'DESC' = String(received.direction);
+        if (['ASC', 'DESC'].indexOf(direction) == -1) direction = 'ASC';
 
         const queryOptions = {
-            where: { registered: registeredParam },
+            where: { registered: String(registeredParam) },
             relations: ['pictures', 'contacts'],
             order: (orderBy == 'name') ? {
                 firstName: direction,
