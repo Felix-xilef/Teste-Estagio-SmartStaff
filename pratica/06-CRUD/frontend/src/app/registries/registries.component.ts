@@ -24,4 +24,9 @@ export class RegistriesComponent implements OnInit {
 
 		this.registryService.getRegistries(orderBy, direction).subscribe((data: Registry[]) => this.registries = data);
 	}
+
+	removeRegistry(id: any) {
+		this.registryService.deleteRegistry(id);
+		this.receiveRegistries();
+	}
 }

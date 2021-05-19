@@ -142,10 +142,12 @@ export class RegistryController {
     }
 
     async delete(request: Request, response: Response) {
-        const registry = getRegistryFromJson(request.body);
+        const id = String(request.query.id);
+
+        const registry = await getRepository(Registry).findOne(id, { relations: ['pictures', 'contacts'] });
         
-        if (await getRepository(Registry).findOne(registry.id)) {
-            await getRepository(Registry).delete({ id: registry.id });
+        if (registry) {
+            await getRepository(Registry).delete({ id: id });
         } else {
             return response.status(404).json({ "error": "registry not found" });
         }

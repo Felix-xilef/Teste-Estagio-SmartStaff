@@ -14,6 +14,14 @@ export class RegistryService {
 	registryUrl = 'http://localhost:3333/registry';
 	registriesUrl = 'http://localhost:3333/registries';
 
+	deleteRegistry(id: string) {
+		return this.http.delete(this.registryUrl, {
+			params: {
+				id: id,
+			}
+		})
+	}
+
 	getRegistry(id: string): Observable<Registry> {
 		return this.http.get<Registry>(this.registryUrl, {
 			params: {
